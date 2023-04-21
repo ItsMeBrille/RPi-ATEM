@@ -5,7 +5,7 @@ import PyATEMMax
 switcher = PyATEMMax.ATEMMax()
 
 # Connect
-switcher.connect("192.168.10.200")
+switcher.connect("192.168.1.100")
 switcher.waitForConnection()
 
 # Have fun!

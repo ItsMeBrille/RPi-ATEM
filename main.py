@@ -18,13 +18,18 @@ def get_key_matching_values(dictionary, values):
 
 # Function to see what cameras are available
 def getAvailableCameras():
-    # ["Navn", Inngang, Mikrofon(Bool), PTZ("192.168.1.1")]
-    cameradict = {
-        0 : ["Oversikt", 3, "mic3"],
+    # Define all cameras:
+    # # n : ["Camera name", ATEM port, Mic port on RPi, PTZ("192.168.1.1")]
+    all_cameras = {
+        0 : ["Oversikt", 3, 3],
         1 : ["Alter", 4, 4],
         2 : ["Prekestol", 5, 5]
     }
     
+    # Check if available
+    for i in all_cameras:
+        print(i)
+
     return cameradict
 
 
@@ -50,7 +55,7 @@ while True:
     
     
     # Deside what camera to switch to
-    cameratoswitchto = 
+    cameratoswitchto = 0
     
     
     # Switch camera

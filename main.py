@@ -6,13 +6,13 @@ cameras = [1, 2, 3, 4]
 
 while True:
 
-if (autoCamActive):
+    if (autoCamActive):
 
-    ### Round start ###
-
-
-    ### Round end ###
+        ### Round start ###
 
 
-    ### Act based on results ###
+        ### Round end ###
+
+
+        ### Act based on results ###
 

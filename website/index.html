@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Bootstrap Template</title>
+        <meta name="author" content="Herman Hellum" />
+        <title>RPi-ATEM</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="img/favicon.ico"/>
         <!-- Bootstrap-->
@@ -22,7 +21,7 @@
         <!-- Top nav-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Tallfølger</a>
+                <a class="navbar-brand" href="index.html">RPi-ATEM</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -37,8 +36,8 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Hvordan fungerer denne siden?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">Hvordan fungerer denne siden?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p class="lead">Siden bruker et kjent layout fra Bootstrap.</p>
@@ -57,9 +56,34 @@
                 <div class="row gx-4 gx-lg-5">
                     
                     <h1>Innhold</h1>
-                    <div class="col-12 col-md-6">
-                        <p>Innhold kommer her</p>
+                    <div class="col-12 col-md-7">
+                        <canvas id="sceneimage"></canvas>
                     </div>
+                    <div class="col-12 col-md-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First</th>
+                                            <th scope="col">Last</th>
+                                            <th scope="col">Handle</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
                     
                 </div>
             </div>

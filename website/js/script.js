@@ -4,11 +4,11 @@ const canvas = document.getElementById("sceneimage");
 const context = canvas.getContext("2d");
 
 const height = 420;
-const width = 640;
+const width = 640; // window.innerWidth
 
 // resize canvas (CSS does scale it up or down)
-canvas.height = height;
-canvas.width = width;
+context.canvas.width = window.innerWidth;
+context.canvas.height = window.innerWidth * 0.65625;
 
 context.strokeStyle = "red";
 context.lineWidth = 5;

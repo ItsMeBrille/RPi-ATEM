@@ -14,4 +14,3 @@ while True:
 
 
         ### Act based on results ###
-

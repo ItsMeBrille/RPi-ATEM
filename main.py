@@ -3,7 +3,6 @@
 ### Define cameras ###
 cameras = [1, 2, 3, 4]
 
-
 while True:
 
     if (autoCamActive):

@@ -11,7 +11,7 @@ The AutoCam feature utilizes a camera to determine whether a person is within an
 - Switch to a camera that points to where the person is.
   - People towards the center of the stage have priority. Exception if sound comes from certain microphones. Then it has priority. For example if there is a lectern with seperate microphone
   - If necessary, move the camera first. If the camera to be moved is already on, a shot from the total angle must show in between.
-- If there are completely silent clips between total, person and short, preset videos from around the room. Put such videos in `src` folder
+- If there are completely silent, begin clipping slowly between total, person and prerecorded videos from around the room. Put such videos in `src` folder
 - If the same camera has been on for a long duration of time, cut to total shot for a few seconds.
 
 ## Tally

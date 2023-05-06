@@ -53,7 +53,7 @@ window.addEventListener("mouseup", endRect);
 
 function updateCanvas(){
     var img = new Image;
-    img.src = "img/scene.jpg";
+    img.src = "static/img/scene.jpg";
     img.onload = function() {
         context.drawImage(img, 0, 0, 680, 680 * img.height / img.width)
     }

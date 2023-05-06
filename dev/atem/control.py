@@ -8,5 +8,6 @@ switcher = PyATEMMax.ATEMMax()
 switcher.connect("192.168.1.100")
 switcher.waitForConnection()
 
-# Have fun!
-switcher.setPreviewInputVideoSource(0, 5)  # Set PVW on input 5 for m/e 0
+
+for i in range(5):
+    switcher.setPreviewInputVideoSource(0, i)  # Set PVW on input 5 for m/e 0

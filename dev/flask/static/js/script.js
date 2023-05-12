@@ -3,65 +3,88 @@
 const canvas = document.getElementById("sceneimage");
 const context = canvas.getContext("2d");
 
+/*
 const height = 420;
-const width = 640; // window.innerWidth
+const width = 640;
+*/
+
+
+const width = canvas.parentElement.clientWidth;
+const height =  width * 0.65625;
+
 
 // resize canvas (CSS does scale it up or down)
-context.canvas.width = window.innerWidth;
-context.canvas.height = window.innerWidth * 0.65625;
+context.canvas.width = width;
+context.canvas.height = height;
+
 
 context.strokeStyle = "red";
 context.lineWidth = 5;
 
 
+
+function getRandomColor(){
+    return `hsl(${Math.random()*360},90%,50%)`;
+  }
+
+
 function getMousePos(canvas, evt) {
-  var rect = canvas.getBoundingClientRect(),
+    var rect = canvas.getBoundingClientRect(),
     scaleX = canvas.width / rect.width,
     scaleY = canvas.height / rect.height;
 
-  return {
-    x: (evt.clientX - rect.left) * scaleX, y: (evt.clientY - rect.top) * scaleY,
-  };
+    return {
+        x: (evt.clientX - rect.left) * scaleX, y: (evt.clientY - rect.top) * scaleY,
+    };
 }
 
 
 let start = {};
 let rectangles = [];
 
+
 function startRect(e){
     start = getMousePos(canvas, e);
 }
 window.addEventListener("mousedown", startRect);
 
+
 function endRect(e){
     let { x, y } = getMousePos(canvas, e);
 
     rectangle = {
-        "coordinates" : {
-            "x1" : start.x,
-            "y1" : start.y,
-            "x2" : x - start.x,
-            "y2" : y - start.y
-        }
+        "ax" : start.x / width,
+        "ay" : start.y / height,
+        "bx" : x / width,
+        "by" : y / height,
+        "color" : getRandomColor()
     }
 
-    rectangles.push(rectangle);
-    context.strokeRect(rectangle.coordinates.x1, rectangle.coordinates.y1, rectangle.coordinates.x2, rectangle.coordinates.y2);
-}
+    if(rectangle.ax>1 || rectangle.ax<0 || rectangle.ay>1 || rectangle.ay<0 || rectangle.bx>1 || rectangle.bx<0 || rectangle.by>1|| rectangle.by<0){return;}
 
+    rectangles.push(rectangle);
+    console.log(rectangle);
+    
+    context.strokeStyle = rectangle.color;
+    context.strokeRect(rectangle.ax * width, rectangle.ay * height, (rectangle.bx-rectangle.ax) * width, (rectangle.by-rectangle.ay) * height);
+}
 window.addEventListener("mouseup", endRect);
+
 
 function updateCanvas(){
     var img = new Image;
     img.src = "static/img/scene.jpg";
     img.onload = function() {
-        context.drawImage(img, 0, 0, 680, 680 * img.height / img.width)
+        context.drawImage(img, 0, 0, width, width * img.height / img.width)
     }
     
     rectangles.forEach(rectangle => {
-        context.strokeRect(rectangle.coordinates.x1, rectangle.coordinates.y1, rectangle.coordinates.x2, rectangle.coordinates.y2);
+        context.strokeStyle = rectangle.color;
+        context.strokeRect(rectangle.ax * width, rectangle.ay * height, (rectangle.bx-rectangle.ax) * width, (rectangle.by-rectangle.ay) * height);
     });
     
 }
 
-updateCanvas();
+document.addEventListener("DOMContentLoaded", function(){
+    updateCanvas();
+});
